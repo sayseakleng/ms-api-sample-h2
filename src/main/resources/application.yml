@@ -1,0 +1,60 @@
+# ========================
+# SERVER CONFIGURATION
+# ========================
+server:
+  port: 8080
+  tomcat:
+    threads:
+      max: 500
+    max-connections: 1000
+  shutdown: graceful
+
+# ========================
+# DATABASE CONFIGURATION
+# ========================
+spring:
+  application:
+    name: ms-api-sample-h2
+  jackson:
+    default-property-inclusion: non-empty
+    property-naming-strategy: SNAKE_CASE
+    serialization:
+      indent-output: false
+  datasource:
+    driver-class-name: org.h2.Driver
+    url: jdbc:h2:mem:testdb
+    username: sa
+    password:
+    hikari:
+      minimum-idle: 1
+      maximum-pool-size: 1
+      connection-timeout: 10000
+      max-lifetime: 1800000
+      idle-timeout: 600000
+      pool-name: ConnectionPool
+      schema: PUBLIC
+  jpa:
+    open-in-view: false
+    show-sql: true
+    hibernate:
+      ddl-auto: update
+    properties:
+      hibernate:
+        '[format_sql]': false
+        '[default_batch_fetch_size]': 16
+        '[order_inserts]': true
+        '[order_updates]': true
+        '[batch_versioned_data]': false
+        '[generate_statistics]': false
+        '[use_sql_comments]': false
+        jdbc:
+          '[fetch_size]': 50
+          '[batch_size]': 30
+  h2:
+    console:
+      enabled: true
+
+app:
+  settings:
+    data-tx-id: X00001
+    data-tx-name: XName
