@@ -1,20 +1,14 @@
 package kh.com.foss.sample.entity;
 
-import jakarta.persistence.Column;
-import jakarta.persistence.Entity;
-import jakarta.persistence.EnumType;
-import jakarta.persistence.Enumerated;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
-import jakarta.persistence.SequenceGenerator;
+import jakarta.persistence.*;
 import kh.com.foss.sample.constant.GenderType;
 import lombok.Getter;
 import lombok.Setter;
 
 @Setter
 @Getter
-@Entity(name = "users")
+@Entity
+@Table(name = "users")
 public class User {
     @Id
     @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "users_seq")

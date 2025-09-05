@@ -1,7 +1,5 @@
 plugins {
     id("java")
-    id("eclipse")
-    id("com.diffplug.eclipse.apt") version "4.3.0"
     id("org.springframework.boot") version "3.5.5"
     id("io.spring.dependency-management") version "1.1.7"
     id("org.owasp.dependencycheck") version "12.1.3"
@@ -20,13 +18,10 @@ java {
     }
 }
 
-eclipse.project {
-    natures("org.eclipse.buildship.core.gradleprojectnature")
-}
-
 val lombokVersion = "1.18.38"
 var springCloudVersion = "2025.0.0"
 var mapstructVersion = "1.6.3";
+var commonsLang3Version = "3.18.0";
 
 repositories {
     mavenCentral()
@@ -48,7 +43,7 @@ dependencies {
     // Spring Cloud
 
     // Apache library
-    implementation("org.apache.commons:commons-lang3")
+    implementation("org.apache.commons:commons-lang3:$commonsLang3Version")
 
     // DB
     runtimeOnly("com.h2database:h2")
@@ -76,16 +71,18 @@ tasks.named<Test>("test") {
     useJUnitPlatform()
 }
 
-configurations.all {
-    // exclude other log implementations
-    exclude(group = "log4j", module = "log4j")
-    exclude(group = "org.slf4j", module = "slf4j-log4j12")
-    exclude(group = "org.slf4j", module = "jul-to-slf4j")
-    exclude(group = "org.slf4j", module = "jcl-over-slf4j")
-    exclude(group = "commons-logging", module = "commons-logging")
-    exclude(group = "org.apache.logging.log4j", module = "log4j-api")
-    exclude(group = "org.apache.logging.log4j", module = "log4j-to-slf4j")
-    exclude(group = "com.vaadin.external.google", module = "android-json")
+configurations {
+    configureEach {
+        // exclude other log implementations
+        exclude(group = "log4j", module = "log4j")
+        exclude(group = "org.slf4j", module = "slf4j-log4j12")
+        exclude(group = "org.slf4j", module = "jul-to-slf4j")
+        exclude(group = "org.slf4j", module = "jcl-over-slf4j")
+        exclude(group = "commons-logging", module = "commons-logging")
+        exclude(group = "org.apache.logging.log4j", module = "log4j-api")
+        exclude(group = "org.apache.logging.log4j", module = "log4j-to-slf4j")
+        exclude(group = "com.vaadin.external.google", module = "android-json")
+    }
 }
 
 spotless {
