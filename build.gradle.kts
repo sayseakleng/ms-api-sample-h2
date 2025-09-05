@@ -18,7 +18,7 @@ java {
     }
 }
 
-val lombokVersion = "1.18.38"
+val lombokVersion = "1.18.40"
 var springCloudVersion = "2025.0.0"
 var mapstructVersion = "1.6.3";
 var commonsLang3Version = "3.18.0";
