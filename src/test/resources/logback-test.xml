@@ -1,5 +1,4 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE xml>
 <configuration>
   <include resource="org/springframework/boot/logging/logback/defaults.xml"/>
   <include resource="org/springframework/boot/logging/logback/console-appender.xml"/>
@@ -7,7 +6,7 @@
   <!-- Application Loggers -->
   <logger name="kh.com.foss" level="ALL" additivity="true"/>
 
-  <!-- 3rdparty Loggers -->
+  <!-- 3rd party Loggers -->
   <logger name="com.zaxxer" level="ALL" additivity="true" />
 
   <root level="INFO">

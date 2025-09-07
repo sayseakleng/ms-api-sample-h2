@@ -24,6 +24,7 @@ class UserServiceTest {
     @Test
     @Order(1)
     void register() {
+        log.info("--> Start register()");
         UserCreationInputDto userCreationInputDto = new UserCreationInputDto();
         userCreationInputDto.setFirstName("Dara");
         userCreationInputDto.setLastName("Sok");
@@ -31,23 +32,25 @@ class UserServiceTest {
         userCreationInputDto.setPhone("011111111");
         UserResultDto register = userService.register(userCreationInputDto);
         assertNotNull(register);
-        log.info("Result: {}", register);
+        log.info("<-- End register() with result: {}", register);
     }
 
     @Test
     void update() {
+        log.info("--> Start update()");
         UserUpdateInputDto userUpdateInputDto = new UserUpdateInputDto();
         userUpdateInputDto.setUserId(1L);
         userUpdateInputDto.setLastName("Dara 2");
         UserResultDto update = userService.update(userUpdateInputDto);
         assertNotNull(update);
-        log.info("Result: {}", update);
+        log.info("<-- End update() with result: {}", update);
     }
 
     @Test
     void getUserByUserId() {
+        log.info("--> Start getUserByUserId()");
         UserResultDto userByUserId = userService.getUserByUserId(1L);
         assertNotNull(userByUserId);
-        log.info("Result: {}", userByUserId);
+        log.info("<-- End getUserByUserId() with result: {}", userByUserId);
     }
 }
