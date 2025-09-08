@@ -4,7 +4,7 @@ root = true
 end_of_line = lf
 insert_final_newline = true
 trim_trailing_whitespace = true
-charset = utf-8
+#charset = utf-8
 
 [*.{yml,yaml,config,properties}]
 indent_style = space
@@ -20,13 +20,11 @@ tab_width = 4
 indent_style = space
 indent_size = 4
 tab_width = 4
-charset = latin1
 
 [.{gitattributes,editorconfig,gitignore}]
 indent_style = space
 indent_size = 4
 tab_width = 4
-charset = latin1
 
 [*.xml]
 indent_style = space
