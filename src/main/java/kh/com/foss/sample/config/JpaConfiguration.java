@@ -8,5 +8,5 @@ import org.springframework.transaction.annotation.EnableTransactionManagement;
 @Configuration
 @EnableTransactionManagement
 @EntityScan("kh.com.foss.sample.entity")
-@EnableJpaRepositories("kh.com.foss.sample.dao")
+@EnableJpaRepositories("kh.com.foss.sample.repository")
 public class JpaConfiguration {}

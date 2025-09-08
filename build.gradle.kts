@@ -38,7 +38,6 @@ dependencies {
     implementation("org.springframework.boot:spring-boot-starter-web")
     implementation("org.springframework.boot:spring-boot-starter-validation")
     implementation("org.springframework.boot:spring-boot-starter-data-jpa")
-    implementation("org.springframework.boot:spring-boot-starter-cache")
 
     // Spring Cloud
 
@@ -47,6 +46,7 @@ dependencies {
 
     // DB
     runtimeOnly("com.h2database:h2")
+    runtimeOnly("org.flywaydb:flyway-core")
 
     // Lombok
     compileOnly("org.projectlombok:lombok:$lombokVersion")
