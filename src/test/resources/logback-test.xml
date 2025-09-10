@@ -7,9 +7,9 @@
   <logger name="kh.com.foss" level="ALL" additivity="true"/>
 
   <!-- 3rd party Loggers -->
-  <logger name="com.zaxxer" level="ALL" additivity="true" />
+  <logger name="com.zaxxer" level="ALL" additivity="true"/>
 
   <root level="INFO">
-    <appender-ref ref="CONSOLE" />
+    <appender-ref ref="CONSOLE"/>
   </root>
 </configuration>
