@@ -47,6 +47,8 @@ out/
 .idea/
 *.iml
 *.iws
+generated/
+generated_tests/
 
 # VS Code
 .vscode
