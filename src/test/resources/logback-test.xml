@@ -8,6 +8,7 @@
 
   <!-- 3rd party Loggers -->
   <logger name="com.zaxxer" level="ALL" additivity="true"/>
+  <logger name="org.hibernate.orm.jdbc.bind" level="ALL" additivity="true"/>
 
   <root level="INFO">
     <appender-ref ref="CONSOLE"/>
