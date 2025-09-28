@@ -50,6 +50,8 @@ spring:
         jdbc:
           '[fetch_size]': 50
           '[batch_size]': 30
+          lob:
+            '[non_contextual_creation]': true
   h2:
     console:
       enabled: true

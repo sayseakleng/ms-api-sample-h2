@@ -2,18 +2,22 @@ package kh.com.foss.sample.entity;
 
 import jakarta.persistence.*;
 import kh.com.foss.sample.constant.GenderType;
-import lombok.Getter;
-import lombok.Setter;
+import lombok.AllArgsConstructor;
+import lombok.Builder;
+import lombok.Data;
+import lombok.NoArgsConstructor;
 
-@Setter
-@Getter
+@Data
+@Builder
+@NoArgsConstructor
+@AllArgsConstructor
 @Entity
 @Table(name = "users")
 public class User {
     @Id
     @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "users_seq")
     @SequenceGenerator(name = "users_seq", sequenceName = "users_seq")
-    private Long userId;
+    private Long id;
 
     @Column(length = 20, nullable = false, unique = true)
     private String phone;
@@ -27,4 +31,8 @@ public class User {
     @Enumerated(EnumType.STRING)
     @Column(length = 1, nullable = false)
     private GenderType gender;
+
+    @Version
+    @Column(nullable = false)
+    private Long version;
 }
